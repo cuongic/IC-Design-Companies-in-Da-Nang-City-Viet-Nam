@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hệ sinh thái công ty vi mạch tại Đà Nẵng</title>
+  <meta name="description" content="Danh sách tổng hợp các công ty vi mạch, thiết kế bán dẫn và doanh nghiệp công nghệ liên quan tại Đà Nẵng." />
+  <style>
+    :root {
+      --bg: #edf3ff;
+      --card: #ffffff;
+      --ink: #152a46;
+      --muted: #5c6e88;
+      --line: #dfe9f7;
+      --primary: #155eef;
+      --primary-dark: #0d3fa6;
+      --soft: #f4f8ff;
+      --tag: #eaf1ff;
+      --shadow: 0 18px 42px rgba(21, 46, 98, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #edf3ff 0%, #f7fafe 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1200px, calc(100% - 24px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f274c 0%, #155eef 100%);
+      color: white;
+      padding: 48px 0 38px;
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.12);
+    }
+
+    .hero-inner {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #d8e9ff;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+      max-width: 820px;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.02rem;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+      max-width: 820px;
+    }
+
+    .stat {
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .stat strong {
+      font-size: 1.2rem;
+      margin-right: 6px;
+    }
+
+    main {
+      padding: 26px 0 42px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 26px 26px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.25rem, 2vw, 1.9rem);
+      letter-spacing: -0.03em;
+    }
+
+    .as-of {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 600;
+    }
+
+    .table-wrap {
+      padding: 16px 18px 18px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
+      table-layout: fixed;
+      font-size: 0.83rem;
+    }
+
+    thead th {
+      text-align: left;
+      background: #edf3ff;
+      color: #2a456d;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 12px;
+    }
+
+    tbody td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #fafcff;
+    }
+
+    .num {
+      color: #7387a5;
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      width: 5%;
+    }
+
+    .company {
+      font-weight: 800;
+      color: #18355f;
+      width: 18%;
+    }
+
+    .entity {
+      width: 34%;
+    }
+
+    .address {
+      width: 43%;
+    }
+
+    .note {
+      margin: 24px auto 0;
+      background: var(--soft);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 18px;
+      color: #415777;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
+    .note strong {
+      color: #1a3359;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      background: #f8fbff;
+      color: var(--muted);
+      font-size: 0.76rem;
+      padding: 18px 0 32px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #20467f;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding-top: 36px; }
+      .section-header { padding: 22px 18px 0; }
+      .table-wrap { padding: 12px 12px 16px; }
+      footer { padding-top: 16px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .hero {
+        padding: 28px 0 22px;
+      }
+      .card {
+        box-shadow: none;
+      }
+      .table-wrap {
+        padding: 8px 12px 12px;
+      }
+      table {
+        font-size: 0.72rem;
+      }
+      tbody td, thead th {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <p class="eyebrow">Da Nang · Semiconductor ecosystem</p>
+        <h1>Hệ sinh thái công ty vi mạch tại Đà Nẵng</h1>
+        <p class="subtitle">
+          Danh sách tổng hợp các doanh nghiệp, đơn vị thiết kế vi mạch và các công ty công nghệ liên quan đến lĩnh vực bán dẫn tại Đà Nẵng, Việt Nam.
+        </p>
+        <div class="stats">
+          <div class="stat"><strong>18</strong> đơn vị</div>
+          <div class="stat">Bản tổng hợp cộng đồng</div>
+          <div class="stat">Cập nhật: 11/11/2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="card">
+        <div class="section-header">
+          <h2>Danh sách doanh nghiệp</h2>
+          <div class="as-of">Thông tin đang được cộng đồng rà soát và cập nhật</div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <colgroup>
+              <col style="width: 5%" />
+              <col style="width: 18%" />
+              <col style="width: 35%" />
+              <col style="width: 42%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Công ty / thương hiệu</th>
+                <th>Tên pháp nhân</th>
+                <th>Địa chỉ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="num">01</td><td class="company">Marvell</td><td class="entity">Chi nhánh Công ty TNHH Công nghệ Marvell Việt Nam tại Đà Nẵng</td><td class="address">Tầng 6–7, Tòa ICT1, Công viên phần mềm số 2, đường Như Nguyệt, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">02</td><td class="company">Synopsys</td><td class="entity">Chi nhánh Công ty TNHH Synopsys Việt Nam tại Đà Nẵng</td><td class="address">Tầng 2, Tòa nhà F.Home, 16 Lý Thường Kiệt, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">03</td><td class="company">Renesas</td><td class="entity">Chi nhánh Công ty TNHH Thiết kế Renesas Việt Nam tại Đà Nẵng</td><td class="address">Tầng 8, Tòa nhà UST, 637–639 Nguyễn Tất Thành, Thanh Khê, Đà Nẵng</td></tr>
+              <tr><td class="num">04</td><td class="company">Quest Global</td><td class="entity">Công ty TNHH Quest Global Design Việt Nam – Văn phòng đại diện tại Đà Nẵng</td><td class="address">Tầng 18, Tòa nhà Vietinbank Sông Hàn, 36 Trần Quốc Toản, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">05</td><td class="company">Mixel</td><td class="entity">Công ty TNHH Mixel Việt Nam</td><td class="address">Lô A3, tầng 5, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">06</td><td class="company">SkyeChip</td><td class="entity">Công ty TNHH SkyeChip Solutions Vietnam</td><td class="address">Tầng 2, K21/4 Lê Hồng Phong, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">07</td><td class="company">FPT Semiconductor</td><td class="entity">Công ty Cổ phần Bán dẫn FPT</td><td class="address">Phòng FSEMI, tầng 3, Tòa F-Complex, Khu đô thị FPT, Ngũ Hành Sơn, Đà Nẵng</td></tr>
+              <tr><td class="num">08</td><td class="company">Alchip</td><td class="entity">Công ty TNHH Alchip Technologies (Việt Nam)</td><td class="address">Văn phòng Đà Nẵng: tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng. Địa chỉ pháp nhân: 64 Nguyễn Đình Chiểu, TP. Hồ Chí Minh</td></tr>
+              <tr><td class="num">09</td><td class="company">Sanei Hytechs</td><td class="entity">Công ty TNHH Sanei Hytechs Việt Nam</td><td class="address">Khu A và H, tầng 21, Tòa nhà số 2 Quang Trung, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">10</td><td class="company">Ideas2Silicon (I2S)</td><td class="entity">Công ty TNHH Ideas2Silicon Việt Nam</td><td class="address">Lầu 5, Indochina Riverside Tower, 74 Bạch Đằng, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">11</td><td class="company">SVC</td><td class="entity">Chi nhánh Công ty TNHH SVC Technologies tại thành phố Đà Nẵng</td><td class="address">Tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">12</td><td class="company">Grovf</td><td class="entity">Công ty TNHH Grovf Vietnam</td><td class="address">Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">13</td><td class="company">Viettel IC</td><td class="entity">Tổng Công ty Công nghiệp Công nghệ cao Viettel</td><td class="address">380 Lạc Long Quân, Tây Hồ, Hà Nội</td></tr>
+              <tr><td class="num">14</td><td class="company">VSAP LAB</td><td class="entity">Công ty Cổ phần VSAP LAB</td><td class="address">Tầng 1, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td></tr>
+              <tr><td class="num">15</td><td class="company">SiBridges</td><td class="entity">Công ty TNHH SiBridges Việt Nam</td><td class="address">41 Châu Thị Vĩnh Tế, Ngũ Hành Sơn, Đà Nẵng</td></tr>
+              <tr><td class="num">16</td><td class="company">GSME</td><td class="entity">Công ty TNHH GSME Việt Nam</td><td class="address">Phòng 801–802, tầng 8, Tháp Royal Tower A, 235 Nguyễn Văn Cừ, TP. Hồ Chí Minh</td></tr>
+              <tr><td class="num">17</td><td class="company">Adoresys</td><td class="entity">Chưa xác định được pháp nhân phù hợp</td><td class="address">Chưa xác minh</td></tr>
+              <tr><td class="num">18</td><td class="company">Connexus</td><td class="entity">Công ty TNHH Connexus Technology</td><td class="address">Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="container">
+          <div class="note">
+            <strong>Ghi chú:</strong> Danh sách được tổng hợp với sự hỗ trợ của GPT từ thông tin công khai và chưa được xác minh đầy đủ với từng doanh nghiệp. Tên pháp nhân, địa chỉ và tình trạng hoạt động có thể thay đổi theo thời gian. Vui lòng kiểm tra nguồn chính thức trước khi sử dụng như thông tin chính thức. Cộng đồng được khuyến khích đóng góp nguồn, cập nhật và sửa lỗi.
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>Danh sách mở — khuyến khích cộng đồng góp ý, cập nhật và bổ sung doanh nghiệp.</span>
+      <span class="brand">DA NANG SEMICONDUCTOR ECOSYSTEM</span>
+    </div>
+  </footer>
+</body>
+</html>
