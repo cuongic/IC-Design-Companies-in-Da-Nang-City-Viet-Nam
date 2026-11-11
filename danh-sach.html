@@ -2,77 +2,187 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Danh sách cộng đồng về các công ty vi mạch và bán dẫn tại Đà Nẵng, kèm liên kết vị trí Google Maps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danh sách cộng đồng các doanh nghiệp vi mạch và bán dẫn có liên hệ với Đà Nẵng, kèm địa chỉ và liên kết Google Maps khi có thông tin.">
   <meta name="theme-color" content="#102b55">
-  <title>Hệ sinh thái công ty vi mạch tại Đà Nẵng</title>
+  <title>Doanh nghiệp vi mạch tại Đà Nẵng</title>
   <style>
-    :root{--ink:#152a46;--muted:#5c6e88;--line:#dfe9f7;--blue:#155eef;--soft:#f4f8ff;--paper:#fff;--shadow:0 18px 42px rgba(21,46,98,.12)}
-    *{box-sizing:border-box}body{margin:0;background:#f2f6fc;color:var(--ink);font:16px/1.6 Inter,"Segoe UI",Roboto,Arial,sans-serif}.container{width:min(1200px,calc(100% - 28px));margin:auto}
-    .hero{padding:42px 0 34px;color:#fff;background:linear-gradient(130deg,#102b55,#155eef)}.eyebrow{margin:0 0 10px;color:#d8e9ff;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}h1{max-width:900px;margin:0;font-size:clamp(2rem,5vw,3.35rem);line-height:1.12;letter-spacing:-.04em}.subtitle{max-width:800px;margin:15px 0 0;color:#e5efff}.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.stat{padding:8px 13px;border:1px solid #ffffff45;border-radius:12px;background:#ffffff12;font-size:.85rem}.stat strong{font-size:1.15rem;margin-right:5px}
-    main{padding:26px 0 42px}.card{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--paper);box-shadow:var(--shadow);margin-bottom:22px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:24px 24px 0}h2{margin:0;font-size:clamp(1.3rem,3vw,1.8rem);letter-spacing:-.03em}.as-of{color:var(--muted);font-size:.78rem}
-    .map-intro{padding:8px 24px 14px;color:var(--muted);font-size:.9rem}.map-frame{display:block;width:calc(100% - 32px);height:380px;margin:0 16px 18px;border:0;border-radius:12px;background:#edf3ff}.map-help{padding:0 24px 20px;color:var(--muted);font-size:.8rem}
-    .table-wrap{overflow:auto;padding:16px 16px 18px}table{width:100%;min-width:900px;border-collapse:collapse;table-layout:fixed;font-size:.84rem}col.num{width:5%}col.company{width:18%}col.entity{width:32%}col.address{width:37%}col.map{width:8%}th{text-align:left;background:#edf3ff;color:#2a456d;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}tbody tr:nth-child(even){background:#fafcff}.num{color:#7387a5;font-variant-numeric:tabular-nums;font-weight:700}.company{color:#18355f;font-weight:800}.company-inner{display:flex;align-items:center;gap:10px;min-height:40px}.company-name{display:inline-block}.logo-badge{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--badge1),var(--badge2));color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.05em;box-shadow:0 8px 16px rgba(16,33,61,.12);flex-shrink:0}.map-link{display:inline-block;padding:6px 9px;border-radius:8px;background:#eaf1ff;color:#155eef;font-size:.75rem;font-weight:700;white-space:nowrap}.map-link:hover{background:#dce8ff}.pending{color:#77859a;font-style:italic}
-    .note{margin:18px 24px 24px;padding:16px 18px;border-radius:0 12px 12px 0;background:var(--soft);border-left:4px solid var(--blue);color:#415777;font-size:.86rem}.note strong{color:#1a3359}.note p{margin:5px 0}.credit{margin-top:10px!important;padding-top:10px;border-top:1px solid var(--line)}footer{padding:18px 0 30px;border-top:1px solid var(--line);background:#f8fbff;color:var(--muted);font-size:.78rem}.footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.brand{color:#20467f;font-weight:800;letter-spacing:.06em}
-    @media(max-width:650px){.hero{padding:32px 0 28px}.section-head{padding:20px 16px 0}.map-intro{padding:8px 16px 12px}.map-frame{width:calc(100% - 20px);height:320px;margin:0 10px 14px}.map-help{padding:0 16px 16px}.table-wrap{padding:12px 10px 14px}.note{margin:16px;padding:14px}.footer-inner{flex-direction:column}}@media print{@page{size:A3 landscape;margin:10mm}body{background:#fff;font-size:11pt}.hero{padding:20px 0;background:#102b55!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}.card{box-shadow:none}.map-frame{height:250px}.table-wrap{overflow:visible;padding:10px}table{min-width:0;font-size:8pt}th,td{padding:6px}.note{margin:12px 0}.container{width:100%}footer{padding:10px 0}}
+    :root {
+      color-scheme: light;
+      --ink: #172a45;
+      --muted: #5d6e84;
+      --line: #dce5f0;
+      --blue: #155eef;
+      --navy: #102b55;
+      --surface: #ffffff;
+      --canvas: #f3f6fb;
+      --soft: #f2f7ff;
+      --shadow: 0 12px 32px rgba(20, 45, 85, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font: 16px/1.6 Inter, "Segoe UI", Roboto, Arial, sans-serif; }
+    a { color: var(--blue); }
+    .container { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+    .hero { padding: clamp(30px, 6vw, 58px) 0 34px; color: white; background: linear-gradient(125deg, #102b55, #155eef); }
+    .eyebrow { margin: 0 0 10px; color: #d8e8ff; font-size: .73rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { max-width: 850px; margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.12; letter-spacing: -.04em; }
+    .subtitle { max-width: 760px; margin: 16px 0 0; color: #e7efff; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .pill { padding: 7px 12px; border: 1px solid #ffffff50; border-radius: 999px; background: #ffffff12; font-size: .82rem; }
+    main { padding: 26px 0 42px; }
+    .panel { margin-bottom: 20px; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: var(--shadow); }
+    .panel-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 8px 16px; padding: 22px 22px 0; }
+    h2 { margin: 0; font-size: clamp(1.25rem, 2.5vw, 1.65rem); line-height: 1.25; letter-spacing: -.025em; }
+    .muted { color: var(--muted); font-size: .82rem; }
+    .map-copy { margin: 8px 22px 14px; color: var(--muted); font-size: .9rem; }
+    .map-frame { display: block; width: calc(100% - 32px); height: 330px; margin: 0 16px 16px; border: 0; border-radius: 12px; background: #eaf0f8; }
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 18px 22px 14px; }
+    .search { flex: 1 1 250px; min-height: 44px; padding: 10px 12px; border: 1px solid #cbd6e5; border-radius: 9px; color: var(--ink); font: inherit; }
+    .search:focus-visible, a:focus-visible { outline: 3px solid #155eef55; outline-offset: 2px; }
+    .count { margin: 0; color: var(--muted); font-size: .8rem; }
+    .table-wrap { padding: 0 16px 18px; }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .84rem; }
+    col.num { width: 5%; } col.company { width: 17%; } col.entity { width: 30%; } col.address { width: 39%; } col.map { width: 9%; }
+    thead th { padding: 11px 10px; border-bottom: 1px solid #cbd8e8; background: #edf3fb; color: #2a456d; font-size: .69rem; letter-spacing: .06em; text-align: left; text-transform: uppercase; }
+    tbody td { padding: 12px 10px; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+    tbody tr:nth-child(even) { background: #fafcff; }
+    tbody tr[hidden] { display: none; }
+    .number { color: #73839a; font-variant-numeric: tabular-nums; }
+    .company-name { color: #18355f; font-weight: 750; }
+    .status { display: inline-block; margin-top: 5px; padding: 2px 7px; border-radius: 999px; background: #fff4d6; color: #78530a; font-size: .7rem; font-weight: 700; }
+    .map-link { display: inline-block; padding: 6px 8px; border-radius: 7px; background: #eaf1ff; font-size: .75rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .map-link:hover { background: #dce8ff; text-decoration: underline; }
+    .note { margin: 0 22px 22px; padding: 14px 16px; border-left: 4px solid var(--blue); border-radius: 0 10px 10px 0; background: var(--soft); color: #40536e; font-size: .84rem; }
+    .note p { margin: 0; }
+    .note p + p { margin-top: 7px; }
+    footer { padding: 18px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; }
+    @media (max-width: 720px) {
+      .container { width: min(100% - 20px, 620px); }
+      .hero { padding-top: 32px; }
+      .panel-heading { padding: 18px 16px 0; }
+      .map-copy { margin: 8px 16px 12px; }
+      .map-frame { width: calc(100% - 20px); height: 280px; margin: 0 10px 12px; }
+      .toolbar { padding: 16px 16px 12px; }
+      .table-wrap { padding: 0 12px 14px; overflow: visible; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      table { min-width: 0; }
+      colgroup, thead { display: none; }
+      tbody { display: grid; gap: 10px; }
+      tbody tr { padding: 11px 13px; border: 1px solid var(--line); border-radius: 11px; background: #fff !important; box-shadow: 0 3px 10px #142d5510; }
+      tbody td { display: grid; grid-template-columns: minmax(105px, 34%) 1fr; gap: 10px; padding: 6px 0; border: 0; font-size: .85rem; }
+      tbody td::before { content: attr(data-label); color: var(--muted); font-size: .72rem; font-weight: 700; }
+      tbody td:first-child { display: none; }
+      .company-name { font-size: 1rem; }
+      .map-cell { align-items: center; }
+      .note { margin: 0 16px 18px; }
+    }
+    @media (max-width: 380px) {
+      tbody td { grid-template-columns: 1fr; gap: 1px; }
+      tbody td::before { font-size: .68rem; }
+    }
+    @media print {
+      @page { size: A3 landscape; margin: 10mm; }
+      body { background: white; font-size: 10pt; }
+      .hero { padding: 20px 0; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .panel { box-shadow: none; }
+      .toolbar { display: none; }
+      .map-frame { height: 220px; }
+      .table-wrap { overflow: visible; }
+      table, tbody, tr, td { display: revert; }
+      table { min-width: 0; font-size: 8pt; }
+      thead { display: table-header-group; }
+      tbody tr { box-shadow: none; }
+      tbody td { padding: 5px; border-bottom: 1px solid var(--line); }
+      tbody td::before { display: none; }
+      tbody td:first-child { display: table-cell; }
+      .container { width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <header class="hero"><div class="container">
-    <p class="eyebrow">Da Nang · Semiconductor ecosystem</p>
-    <h1>Hệ sinh thái công ty vi mạch tại Đà Nẵng</h1>
-    <p class="subtitle">Danh sách tổng hợp các doanh nghiệp, đơn vị thiết kế vi mạch và công ty công nghệ liên quan đến lĩnh vực bán dẫn có văn phòng tại Đà Nẵng.</p>
-    <div class="stats"><div class="stat"><strong>18</strong> công ty / đơn vị trong danh sách</div><div class="stat">15 địa chỉ văn phòng tại Đà Nẵng có liên kết bản đồ</div><div class="stat">Cập nhật: 11/11/2026</div></div>
-  </div></header>
-  <main><div class="container">
-    <section class="card" aria-labelledby="map-title">
-      <div class="section-head"><h2 id="map-title">Bản đồ văn phòng tại Đà Nẵng</h2><div class="as-of">Chỉ hiển thị khu vực Đà Nẵng</div></div>
-      <p class="map-intro">Bản đồ tổng quan khu vực Đà Nẵng. Chọn nút <strong>Mở bản đồ</strong> ở các dòng có địa chỉ để tìm vị trí cụ thể.</p>
-      <iframe class="map-frame" title="Bản đồ Google Maps khu vực Đà Nẵng" src="https://maps.google.com/maps?q=Da%20Nang%2C%20Vietnam&t=&z=12&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-      <p class="map-help">Các liên kết bản đồ tìm kiếm theo địa chỉ đã cung cấp; vị trí có thể chưa chính xác tuyệt đối. Vui lòng xác nhận với doanh nghiệp trước khi đến.</p>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Da Nang · Semiconductor ecosystem</p>
+      <h1>Doanh nghiệp vi mạch tại Đà Nẵng</h1>
+      <p class="subtitle">Danh sách cộng đồng tổng hợp các doanh nghiệp thiết kế vi mạch, bán dẫn và đơn vị liên quan có thông tin gắn với Đà Nẵng.</p>
+      <div class="hero-meta">
+        <span class="pill">18 công ty / đơn vị</span>
+        <span class="pill">16 địa chỉ có liên kết bản đồ</span>
+        <span class="pill">Cập nhật: 11/11/2026</span>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="panel" aria-labelledby="map-title">
+      <div class="panel-heading">
+        <h2 id="map-title">Bản đồ khu vực Đà Nẵng</h2>
+        <span class="muted">Mở Google Maps từ liên kết ở từng dòng</span>
+      </div>
+      <p class="map-copy">Bản đồ dưới đây hiển thị khu vực thành phố; các liên kết trong danh sách tìm theo địa chỉ cụ thể.</p>
+      <iframe class="map-frame" title="Google Maps khu vực Đà Nẵng" src="https://maps.google.com/maps?q=Da%20Nang%2C%20Vietnam&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </section>
-    <section class="card" aria-labelledby="list-title">
-      <div class="section-head"><h2 id="list-title">Danh sách doanh nghiệp</h2><div class="as-of">Ba mục cuối để cộng đồng bổ sung địa chỉ / xác minh</div></div>
-      <div class="table-wrap"><table id="companies">
-        <colgroup><col class="num"><col class="company"><col class="entity"><col class="address"><col class="map"></colgroup>
-        <thead><tr><th>STT</th><th>Công ty / thương hiệu</th><th>Tên pháp nhân</th><th>Địa chỉ / ghi chú tại Đà Nẵng</th><th>Bản đồ</th></tr></thead>
-        <tbody>
-          <tr><td class="num">01</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#2657d5;--badge2:#4a9bff;">MV</span><span class="company-name">Marvell</span></div></td><td>Chi nhánh Công ty TNHH Công nghệ Marvell Việt Nam tại Đà Nẵng</td><td>Tầng 6–7, Tòa ICT1, Công viên phần mềm số 2, đường Như Nguyệt, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">02</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#0c63d6;--badge2:#67b7ff;">SY</span><span class="company-name">Synopsys</span></div></td><td>Chi nhánh Công ty TNHH Synopsys Việt Nam tại Đà Nẵng</td><td>Tầng 2, Tòa nhà F.Home, 16 Lý Thường Kiệt, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">03</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#5e38b5;--badge2:#8d7ef0;">RN</span><span class="company-name">Renesas</span></div></td><td>Chi nhánh Công ty TNHH Thiết kế Renesas Việt Nam tại Đà Nẵng</td><td>Tầng 8, Tòa nhà UST, 637–639 Nguyễn Tất Thành, Thanh Khê, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">04</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#0a7a7a;--badge2:#40c5b7;">QG</span><span class="company-name">Quest Global</span></div></td><td>Công ty TNHH Quest Global Design Việt Nam – Văn phòng đại diện tại Đà Nẵng</td><td>Tầng 18, Tòa nhà Vietinbank Sông Hàn, 36 Trần Quốc Toản, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">05</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#f1602a;--badge2:#ff9d4d;">MX</span><span class="company-name">Mixel</span></div></td><td>Công ty TNHH Mixel Việt Nam</td><td>Lô A3, tầng 5, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">06</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#1f7ae0;--badge2:#52d6ff;">SK</span><span class="company-name">SkyeChip</span></div></td><td>Công ty TNHH SkyeChip Solutions Vietnam</td><td>Tầng 2, K21/4 Lê Hồng Phong, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">07</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#d3222a;--badge2:#ff7f5c;">FPT</span><span class="company-name">FPT Semiconductor</span></div></td><td>Công ty Cổ phần Bán dẫn FPT</td><td>Phòng FSEMI, tầng 3, Tòa F-Complex, Khu đô thị FPT, Ngũ Hành Sơn, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">08</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#ef4444;--badge2:#fb923c;">AL</span><span class="company-name">Alchip</span></div></td><td>Công ty TNHH Alchip Technologies (Việt Nam)</td><td>Văn phòng Đà Nẵng: tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">09</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#14532d;--badge2:#34d399;">SH</span><span class="company-name">Sanei Hytechs</span></div></td><td>Công ty TNHH Sanei Hytechs Việt Nam</td><td>Khu A và H, tầng 21, Tòa nhà số 2 Quang Trung, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">10</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#7c3aed;--badge2:#a78bfa;">I2S</span><span class="company-name">Ideas2Silicon (I2S)</span></div></td><td>Công ty TNHH Ideas2Silicon Việt Nam</td><td>Lầu 5, Indochina Riverside Tower, 74 Bạch Đằng, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">11</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#0369a1;--badge2:#38bdf8;">SV</span><span class="company-name">SVC</span></div></td><td>Chi nhánh Công ty TNHH SVC Technologies tại thành phố Đà Nẵng</td><td>Tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">12</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#0f766e;--badge2:#2dd4bf;">GV</span><span class="company-name">Grovf</span></div></td><td>Công ty TNHH Grovf Vietnam</td><td>Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">13</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#475569;--badge2:#7dd3fc;">VIC</span><span class="company-name">Viettel IC</span></div></td><td>Tổng Công ty Công nghiệp Công nghệ cao Viettel</td><td class="pending">Chưa có địa chỉ văn phòng tại Đà Nẵng được xác nhận; địa chỉ trong bản tổng hợp ban đầu ở Hà Nội.</td><td class="pending">Chờ xác minh</td></tr>
-          <tr><td class="num">14</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#334155;--badge2:#94a3b8;">VS</span><span class="company-name">VSAP LAB</span></div></td><td>Công ty Cổ phần VSAP LAB</td><td>Tầng 1, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-          <tr><td class="num">15</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#0c4a6e;--badge2:#38bdf8;">SB</span><span class="company-name">SiBridges</span></div></td><td>Công ty TNHH SiBridges Việt Nam</td><td>Địa chỉ đăng ký kinh doanh được ghi nhận; theo thông tin cộng đồng, hoạt động tại Huế. Cần xác minh thêm phạm vi hoạt động và văn phòng tại Đà Nẵng.</td><td class="pending">Chờ xác minh</td></tr>
-          <tr><td class="num">16</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#7c2d12;--badge2:#f59e0b;">GM</span><span class="company-name">GSME</span></div></td><td>Công ty TNHH GSME Việt Nam</td><td class="pending">Chưa có địa chỉ văn phòng tại Đà Nẵng được xác nhận; địa chỉ trong bản tổng hợp ban đầu ở TP. Hồ Chí Minh.</td><td class="pending">Chờ xác minh</td></tr>
-          <tr><td class="num">17</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#6b7280;--badge2:#d1d5db;">AD</span><span class="company-name">Adoresys</span></div></td><td>Chưa xác định được pháp nhân phù hợp</td><td class="pending">Chưa xác minh địa chỉ văn phòng tại Đà Nẵng. Cộng đồng có thể bổ sung thông tin và nguồn kiểm chứng.</td><td class="pending">Chờ xác minh</td></tr>
-          <tr><td class="num">18</td><td class="company"><div class="company-inner"><span class="logo-badge" style="--badge1:#1d4ed8;--badge2:#60a5fa;">CN</span><span class="company-name">Connexus</span></div></td><td>Công ty TNHH Connexus Technology</td><td>Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td><a class="map-link" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
-        </tbody>
-      </table></div>
-      <aside class="note" aria-label="Nguồn thông tin và điều khoản sử dụng">
-        <p><strong>Nguồn và hiệu chỉnh:</strong> Thông tin được tìm kiếm, tổng hợp với sự hỗ trợ của GPT và được cuongic hiệu chỉnh.</p>
-        <p><strong>Lưu ý:</strong> Danh sách là bản tổng hợp cộng đồng, chưa được xác minh đầy đủ với từng doanh nghiệp. Viettel IC đã được bổ sung địa chỉ theo thông tin người biên tập cung cấp. SiBridges có thông tin đăng ký kinh doanh nhưng cần cộng đồng xác minh thêm hoạt động tại Huế và phạm vi/văn phòng tại Đà Nẵng. Các thông tin chưa có địa chỉ Đà Nẵng xác nhận chưa được gắn ghim bản đồ.</p>
-        <p class="credit"><strong>Mục đích sử dụng:</strong> Nội dung được chia sẻ cho mục đích tham khảo, cộng đồng và phi thương mại; không nhằm mục đích quảng bá hay đại diện cho bất kỳ doanh nghiệp nào.</p>
+
+    <section class="panel" aria-labelledby="list-title">
+      <div class="panel-heading">
+        <h2 id="list-title">Danh sách doanh nghiệp</h2>
+        <span class="muted">Thông tin chưa xác minh được đánh dấu</span>
+      </div>
+      <div class="toolbar">
+        <input id="company-search" class="search" type="search" placeholder="Tìm công ty, pháp nhân hoặc địa chỉ…" aria-label="Tìm trong danh sách công ty">
+        <p id="result-count" class="count" aria-live="polite">18/18 đơn vị</p>
+      </div>
+      <div class="table-wrap">
+        <table id="companies">
+          <colgroup><col class="num"><col class="company"><col class="entity"><col class="address"><col class="map"></colgroup>
+          <thead><tr><th>STT</th><th>Công ty / thương hiệu</th><th>Tên pháp nhân</th><th>Địa chỉ / ghi chú</th><th>Bản đồ</th></tr></thead>
+          <tbody>
+            <tr><td class="number" data-label="STT">01</td><td data-label="Công ty / thương hiệu"><span class="company-name">Marvell</span></td><td data-label="Tên pháp nhân">Chi nhánh Công ty TNHH Công nghệ Marvell Việt Nam tại Đà Nẵng</td><td data-label="Địa chỉ / ghi chú">Tầng 6–7, Tòa ICT1, Công viên phần mềm số 2, đường Như Nguyệt, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 6–7, Tòa ICT1, Công viên phần mềm số 2, đường Như Nguyệt, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">02</td><td data-label="Công ty / thương hiệu"><span class="company-name">Synopsys</span></td><td data-label="Tên pháp nhân">Chi nhánh Công ty TNHH Synopsys Việt Nam tại Đà Nẵng</td><td data-label="Địa chỉ / ghi chú">Tầng 2, Tòa nhà F.Home, 16 Lý Thường Kiệt, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 2, Tòa nhà F.Home, 16 Lý Thường Kiệt, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">03</td><td data-label="Công ty / thương hiệu"><span class="company-name">Renesas</span></td><td data-label="Tên pháp nhân">Chi nhánh Công ty TNHH Thiết kế Renesas Việt Nam tại Đà Nẵng</td><td data-label="Địa chỉ / ghi chú">Tầng 8, Tòa nhà UST, 637–639 Nguyễn Tất Thành, Thanh Khê, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 8, Tòa nhà UST, 637–639 Nguyễn Tất Thành, Thanh Khê, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">04</td><td data-label="Công ty / thương hiệu"><span class="company-name">Quest Global</span></td><td data-label="Tên pháp nhân">Công ty TNHH Quest Global Design Việt Nam – Văn phòng đại diện tại Đà Nẵng</td><td data-label="Địa chỉ / ghi chú">Tầng 18, Tòa nhà Vietinbank Sông Hàn, 36 Trần Quốc Toản, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 18, Tòa nhà Vietinbank Sông Hàn, 36 Trần Quốc Toản, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">05</td><td data-label="Công ty / thương hiệu"><span class="company-name">Mixel</span></td><td data-label="Tên pháp nhân">Công ty TNHH Mixel Việt Nam</td><td data-label="Địa chỉ / ghi chú">Lô A3, tầng 5, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Lô A3, tầng 5, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">06</td><td data-label="Công ty / thương hiệu"><span class="company-name">SkyeChip</span></td><td data-label="Tên pháp nhân">Công ty TNHH SkyeChip Solutions Vietnam</td><td data-label="Địa chỉ / ghi chú">Tầng 2, K21/4 Lê Hồng Phong, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 2, K21/4 Lê Hồng Phong, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">07</td><td data-label="Công ty / thương hiệu"><span class="company-name">FPT Semiconductor</span></td><td data-label="Tên pháp nhân">Công ty Cổ phần Bán dẫn FPT</td><td data-label="Địa chỉ / ghi chú">Phòng FSEMI, tầng 3, Tòa F-Complex, Khu đô thị FPT, Ngũ Hành Sơn, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Phòng FSEMI, tầng 3, Tòa F-Complex, Khu đô thị FPT, Ngũ Hành Sơn, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">08</td><td data-label="Công ty / thương hiệu"><span class="company-name">Alchip</span></td><td data-label="Tên pháp nhân">Công ty TNHH Alchip Technologies (Việt Nam)</td><td data-label="Địa chỉ / ghi chú">Văn phòng Đà Nẵng: tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">09</td><td data-label="Công ty / thương hiệu"><span class="company-name">Sanei Hytechs</span></td><td data-label="Tên pháp nhân">Công ty TNHH Sanei Hytechs Việt Nam</td><td data-label="Địa chỉ / ghi chú">Khu A và H, tầng 21, Tòa nhà số 2 Quang Trung, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Khu A và H, tầng 21, Tòa nhà số 2 Quang Trung, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">10</td><td data-label="Công ty / thương hiệu"><span class="company-name">Ideas2Silicon (I2S)</span></td><td data-label="Tên pháp nhân">Công ty TNHH Ideas2Silicon Việt Nam</td><td data-label="Địa chỉ / ghi chú">Lầu 5, Indochina Riverside Tower, 74 Bạch Đằng, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Lầu 5, Indochina Riverside Tower, 74 Bạch Đằng, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">11</td><td data-label="Công ty / thương hiệu"><span class="company-name">SVC</span></td><td data-label="Tên pháp nhân">Chi nhánh Công ty TNHH SVC Technologies tại thành phố Đà Nẵng</td><td data-label="Địa chỉ / ghi chú">Tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 7, 218 Bạch Đằng, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">12</td><td data-label="Công ty / thương hiệu"><span class="company-name">Grovf</span></td><td data-label="Tên pháp nhân">Công ty TNHH Grovf Vietnam</td><td data-label="Địa chỉ / ghi chú">Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">13</td><td data-label="Công ty / thương hiệu"><span class="company-name">Viettel IC</span></td><td data-label="Tên pháp nhân">Tổng Công ty Công nghiệp Công nghệ cao Viettel</td><td data-label="Địa chỉ / ghi chú">Tòa nhà Viettel, đối diện Đại học Đông Á, 58 Xô Viết Nghệ Tĩnh, phường Hòa Cường, Đà Nẵng. Địa chỉ do người biên tập cung cấp, cần cộng đồng xác minh.</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tòa nhà Viettel, đối diện Đại học Đông Á, 58 Xô Viết Nghệ Tĩnh, phường Hòa Cường, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">14</td><td data-label="Công ty / thương hiệu"><span class="company-name">VSAP LAB</span></td><td data-label="Tên pháp nhân">Công ty Cổ phần VSAP LAB</td><td data-label="Địa chỉ / ghi chú">Tầng 1, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 1, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+            <tr><td class="number" data-label="STT">15</td><td data-label="Công ty / thương hiệu"><span class="company-name">SiBridges</span><span class="status">Cần xác minh</span></td><td data-label="Tên pháp nhân">Công ty TNHH SiBridges Việt Nam</td><td data-label="Địa chỉ / ghi chú">Có thông tin đăng ký kinh doanh; theo thông tin cộng đồng, hoạt động tại Huế. Chưa xác minh văn phòng tại Đà Nẵng.</td><td class="map-cell" data-label="Bản đồ"><span class="muted">Chưa có vị trí Đà Nẵng</span></td></tr>
+            <tr><td class="number" data-label="STT">16</td><td data-label="Công ty / thương hiệu"><span class="company-name">GSME</span><span class="status">Chờ bổ sung</span></td><td data-label="Tên pháp nhân">Công ty TNHH GSME Việt Nam</td><td data-label="Địa chỉ / ghi chú">Địa chỉ trong bản tổng hợp ban đầu ở TP. Hồ Chí Minh; chưa có địa chỉ văn phòng tại Đà Nẵng được xác nhận.</td><td class="map-cell" data-label="Bản đồ"><span class="muted">Chưa có vị trí Đà Nẵng</span></td></tr>
+            <tr><td class="number" data-label="STT">17</td><td data-label="Công ty / thương hiệu"><span class="company-name">Adoresys</span><span class="status">Chờ xác minh</span></td><td data-label="Tên pháp nhân">Chưa xác định được pháp nhân phù hợp</td><td data-label="Địa chỉ / ghi chú">Chưa xác minh địa chỉ văn phòng tại Đà Nẵng. Cộng đồng có thể bổ sung thông tin kèm nguồn.</td><td class="map-cell" data-label="Bản đồ"><span class="muted">Chưa có vị trí Đà Nẵng</span></td></tr>
+            <tr><td class="number" data-label="STT">18</td><td data-label="Công ty / thương hiệu"><span class="company-name">Connexus</span></td><td data-label="Tên pháp nhân">Công ty TNHH Connexus Technology</td><td data-label="Địa chỉ / ghi chú">Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng</td><td class="map-cell" data-label="Bản đồ"><a class="map-link" data-address="Tầng 4, Tòa ICT1, Công viên phần mềm số 2, Như Nguyệt, Hải Châu, Đà Nẵng" target="_blank" rel="noopener noreferrer">Mở bản đồ</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="note" aria-label="Nguồn và lưu ý">
+        <p><strong>Nguồn và hiệu chỉnh:</strong> Thông tin được tìm kiếm, tổng hợp với sự hỗ trợ của GPT và hiệu chỉnh bởi cuongic; danh sách chưa được xác minh đầy đủ với từng doanh nghiệp.</p>
+        <p><strong>Sử dụng:</strong> Chia sẻ phi thương mại nhằm mục đích tham khảo và cộng đồng. Địa chỉ Viettel IC do người biên tập cung cấp; thông tin SiBridges về hoạt động tại Huế và các mục đang chờ bổ sung cần được cộng đồng kiểm chứng. Liên kết Google Maps là kết quả tìm kiếm theo địa chỉ, không phải xác nhận chính thức về vị trí văn phòng.</p>
       </aside>
     </section>
-  </div></main>
-  <footer><div class="container footer-inner"><span>Danh sách mở — khuyến khích cộng đồng góp ý, cập nhật và bổ sung doanh nghiệp.</span><span class="brand">Tìm kiếm, tổng hợp với GPT · Hiệu chỉnh bởi cuongic · Phi thương mại</span></div></footer>
+  </main>
+  <footer><div class="container footer-inner"><span>Đề xuất cập nhật nên kèm nguồn công khai hoặc xác nhận từ doanh nghiệp.</span><span>GPT hỗ trợ tổng hợp · Hiệu chỉnh: cuongic · Phi thương mại</span></div></footer>
   <script>
-    document.querySelectorAll('#companies tbody tr').forEach(row => {
-      const addressCell = row.cells[3];
-      const link = row.querySelector('.map-link');
-      if (link && addressCell && !addressCell.classList.contains('pending')) {
-        const address = addressCell.innerText.trim() + ', Đà Nẵng, Việt Nam';
-        link.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
-      }
+    document.querySelectorAll('.map-link[data-address]').forEach(link => {
+      const address = link.dataset.address + ', Việt Nam';
+      link.href = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address);
+    });
+    const search = document.getElementById('company-search');
+    const rows = [...document.querySelectorAll('#companies tbody tr')];
+    const count = document.getElementById('result-count');
+    search.addEventListener('input', () => {
+      const query = search.value.trim().toLocaleLowerCase('vi');
+      let visible = 0;
+      rows.forEach(row => {
+        const match = row.innerText.toLocaleLowerCase('vi').includes(query);
+        row.hidden = !match;
+        if (match) visible++;
+      });
+      count.textContent = `${visible}/${rows.length} đơn vị`;
     });
   </script>
 </body>
